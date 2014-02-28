@@ -21,6 +21,13 @@
 		550BA8F218BB508600B45475 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BA8D418BB508600B45475 /* UIKit.framework */; };
 		550BA8FA18BB508600B45475 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550BA8F818BB508600B45475 /* InfoPlist.strings */; };
 		550BA8FC18BB508600B45475 /* LCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BA8FB18BB508600B45475 /* LCalendarTests.m */; };
+		553E44AD18BC2EB00070E833 /* BottomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44AC18BC2EB00070E833 /* BottomControlView.m */; };
+		553E44B518BC2EEC0070E833 /* Datetime.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44B018BC2EEC0070E833 /* Datetime.m */; };
+		553E44B618BC2EEC0070E833 /* JBCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44B218BC2EEC0070E833 /* JBCalendar.m */; };
+		553E44B718BC2EEC0070E833 /* LunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44B418BC2EEC0070E833 /* LunarCalendar.m */; };
+		553E44BA18BC304B0070E833 /* LMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44B918BC304B0070E833 /* LMonthViewController.m */; };
+		553E44BD18BC305B0070E833 /* LDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44BC18BC305B0070E833 /* LDayViewController.m */; };
+		553E44C018BC306D0070E833 /* LAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44BF18BC306D0070E833 /* LAboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,20 @@
 		550BA8F718BB508600B45475 /* LCalendarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCalendarTests-Info.plist"; sourceTree = "<group>"; };
 		550BA8F918BB508600B45475 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		550BA8FB18BB508600B45475 /* LCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCalendarTests.m; sourceTree = "<group>"; };
+		553E44AB18BC2EB00070E833 /* BottomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomControlView.h; sourceTree = "<group>"; };
+		553E44AC18BC2EB00070E833 /* BottomControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomControlView.m; sourceTree = "<group>"; };
+		553E44AF18BC2EEC0070E833 /* Datetime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datetime.h; sourceTree = "<group>"; };
+		553E44B018BC2EEC0070E833 /* Datetime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Datetime.m; sourceTree = "<group>"; };
+		553E44B118BC2EEC0070E833 /* JBCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCalendar.h; sourceTree = "<group>"; };
+		553E44B218BC2EEC0070E833 /* JBCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBCalendar.m; sourceTree = "<group>"; };
+		553E44B318BC2EEC0070E833 /* LunarCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LunarCalendar.h; sourceTree = "<group>"; };
+		553E44B418BC2EEC0070E833 /* LunarCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LunarCalendar.m; sourceTree = "<group>"; };
+		553E44B818BC304B0070E833 /* LMonthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMonthViewController.h; sourceTree = "<group>"; };
+		553E44B918BC304B0070E833 /* LMonthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMonthViewController.m; sourceTree = "<group>"; };
+		553E44BB18BC305B0070E833 /* LDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDayViewController.h; sourceTree = "<group>"; };
+		553E44BC18BC305B0070E833 /* LDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDayViewController.m; sourceTree = "<group>"; };
+		553E44BE18BC306D0070E833 /* LAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAboutViewController.h; sourceTree = "<group>"; };
+		553E44BF18BC306D0070E833 /* LAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +133,8 @@
 		550BA8D618BB508600B45475 /* LCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				553E44AE18BC2EEC0070E833 /* DataSource */,
+				553E44A918BC2EB00070E833 /* UI */,
 				550BA8DF18BB508600B45475 /* AppDelegate.h */,
 				550BA8E018BB508600B45475 /* AppDelegate.m */,
 				550BA8E218BB508600B45475 /* Main.storyboard */,
@@ -150,6 +173,42 @@
 				550BA8F818BB508600B45475 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		553E44A918BC2EB00070E833 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				553E44AA18BC2EB00070E833 /* BottomView */,
+				553E44B818BC304B0070E833 /* LMonthViewController.h */,
+				553E44B918BC304B0070E833 /* LMonthViewController.m */,
+				553E44BB18BC305B0070E833 /* LDayViewController.h */,
+				553E44BC18BC305B0070E833 /* LDayViewController.m */,
+				553E44BE18BC306D0070E833 /* LAboutViewController.h */,
+				553E44BF18BC306D0070E833 /* LAboutViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		553E44AA18BC2EB00070E833 /* BottomView */ = {
+			isa = PBXGroup;
+			children = (
+				553E44AB18BC2EB00070E833 /* BottomControlView.h */,
+				553E44AC18BC2EB00070E833 /* BottomControlView.m */,
+			);
+			path = BottomView;
+			sourceTree = "<group>";
+		};
+		553E44AE18BC2EEC0070E833 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				553E44AF18BC2EEC0070E833 /* Datetime.h */,
+				553E44B018BC2EEC0070E833 /* Datetime.m */,
+				553E44B118BC2EEC0070E833 /* JBCalendar.h */,
+				553E44B218BC2EEC0070E833 /* JBCalendar.m */,
+				553E44B318BC2EEC0070E833 /* LunarCalendar.h */,
+				553E44B418BC2EEC0070E833 /* LunarCalendar.m */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +309,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				550BA8E718BB508600B45475 /* ViewController.m in Sources */,
+				553E44B618BC2EEC0070E833 /* JBCalendar.m in Sources */,
+				553E44BA18BC304B0070E833 /* LMonthViewController.m in Sources */,
+				553E44C018BC306D0070E833 /* LAboutViewController.m in Sources */,
+				553E44BD18BC305B0070E833 /* LDayViewController.m in Sources */,
+				553E44B718BC2EEC0070E833 /* LunarCalendar.m in Sources */,
+				553E44B518BC2EEC0070E833 /* Datetime.m in Sources */,
 				550BA8E118BB508600B45475 /* AppDelegate.m in Sources */,
 				550BA8DD18BB508600B45475 /* main.m in Sources */,
+				553E44AD18BC2EB00070E833 /* BottomControlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +526,7 @@
 				550BA90118BB508600B45475 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		550BA90218BB508600B45475 /* Build configuration list for PBXNativeTarget "LCalendarTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +535,7 @@
 				550BA90418BB508600B45475 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
