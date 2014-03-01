@@ -10,4 +10,5 @@
 
 @interface LAboutViewController : UIViewController
 
+- (void)activate;
 @end

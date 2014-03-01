@@ -7,12 +7,18 @@
 //
 
 #import "LDayViewController.h"
+#import "Datetime.h"
 
 @interface LDayViewController ()
 
 @end
 
 @implementation LDayViewController
+
+- (void)activate
+{
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor blueColor];
 }
 
 - (void)didReceiveMemoryWarning

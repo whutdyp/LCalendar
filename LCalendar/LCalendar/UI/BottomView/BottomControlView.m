@@ -16,8 +16,8 @@
 
 #define VIEWBLACKHEIGHT (48.0)
 
-#define SYSTEM_HEIGHT (320)
-#define SYSTEM_WIDTH (320.0)
+#define SYSTEM_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SYSTEM_WIDTH [UIScreen mainScreen].bounds.size.width
 
 
 //////
@@ -52,6 +52,7 @@ static BottomControlView* pBottomControlView = nil;
 
 @implementation BottomControlView
 @synthesize dayButton = _dayButton,monthButton = _monthButton, yearButton = _yearButton, aboutButton = _aboutButton;
+@synthesize parentView = _parentView;
 
 + (BottomControlView* )getInstance
 {
@@ -60,6 +61,7 @@ static BottomControlView* pBottomControlView = nil;
         [pBottomControlView setBackgroundColor:VIEWBLACKBGCOLOR];
         
         pBottomControlView.frame = CGRectMake(0, SYSTEM_HEIGHT, SYSTEM_WIDTH, VIEWBLACKHEIGHT);
+        pBottomControlView.hidden = YES;
     }
     return pBottomControlView;
 }
@@ -116,22 +118,80 @@ static BottomControlView* pBottomControlView = nil;
 
 - (void)dayButtonSelected
 {
+    NSLog(@"day click");
 //    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:2 andDay:17]);
 }
 
 - (void)monthButtonSelected
 {
+    NSLog(@"month click");
 //    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:2 andDay:14]);
 }
 
 - (void)yearButtonSelected
 {
+    NSLog(@"year click");
 //    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:2 andDay:4]);
 }
 
 - (void)aboutButtonSelected
 {
+    NSLog(@"about click");
 //    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:1 andDay:5]);
 }
 
+#pragma mark - 
+- (void)showView
+{
+    if (self.hidden == YES) {
+        [self showViewAutoHide:NO];
+    }
+}
+
+- (void)dismissView
+{
+    [self dismissViewDelay:0.0f];
+}
+
+- (void)dismissViewDelay:(CGFloat)seconds
+{
+    [UIView beginAnimations:@"dismissFeedUpAnimation" context:nil];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(dismissAction)];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView setAnimationDelay:seconds];
+    
+    self.frame = CGRectMake(0, SYSTEM_HEIGHT, SYSTEM_WIDTH, VIEWBLACKHEIGHT);
+    self.alpha = 0.6;
+    [UIView commitAnimations];
+}
+
+- (void)dismissAction
+{
+    self.hidden = YES;
+}
+
+- (void)showViewAutoHide:(BOOL)autoly
+{
+    self.hidden = NO;
+    self.userInteractionEnabled = YES;
+    [self.parentView bringSubviewToFront:self];
+    self.frame = CGRectMake(0, SYSTEM_HEIGHT, SYSTEM_WIDTH, VIEWBLACKHEIGHT);
+    self.alpha = 0.6;
+    
+    
+    [UIView beginAnimations:@"showFeedUpAnimation" context:nil];
+    [UIView setAnimationDelegate:self];
+    if (autoly) {
+        [UIView setAnimationDidStopSelector:@selector(dismissView)];
+    }
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView setAnimationDelay:0.3];
+    
+    self.frame = CGRectMake(0, SYSTEM_HEIGHT - VIEWBLACKHEIGHT, SYSTEM_WIDTH, VIEWBLACKHEIGHT);
+    self.alpha = 1.0;
+    [UIView commitAnimations];
+}
 @end

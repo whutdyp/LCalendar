@@ -10,4 +10,5 @@
 
 @interface LMonthViewController : UIViewController
 
+- (void)activate;
 @end

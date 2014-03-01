@@ -10,6 +10,13 @@
 
 @interface BottomControlView : UIView
 
+@property (nonatomic, retain) UIView* parentView;
+
 + (BottomControlView* )getInstance;
+
+- (void)showView;
+- (void)showViewAutoHide:(BOOL)autoly;
+
+- (void)dismissView;
 
 @end

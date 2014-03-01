@@ -7,12 +7,114 @@
 //
 
 #import "AppDelegate.h"
+#import "LDayViewController.h"
+#import "LMonthViewController.h"
+#import "LAboutViewController.h"
+#import "BottomControlView.h"
+
+static AppDelegate* _instance = nil;
 
 @implementation AppDelegate
 
+@synthesize window;
+@synthesize dayViewController = _dayViewController,monthViewController = _monthViewController,aboutViewController = _aboutViewController;
+@synthesize bottomView = _bottomView;
+#pragma mark -delay initialize sub view controllers
++ (AppDelegate *)getInstance
+{
+    return _instance;
+}
+
+- (LDayViewController *)dayViewController
+{
+    if (nil == _dayViewController) {
+        _dayViewController = [[LDayViewController alloc] init];
+        [window addSubview:_dayViewController.view];
+
+    }
+    return _dayViewController;
+}
+
+- (LMonthViewController *)monthViewController
+{
+    if (nil == _monthViewController) {
+        _monthViewController = [[LMonthViewController alloc] init];
+        [window addSubview:_monthViewController.view];
+    }
+    return _monthViewController;
+}
+
+- (LAboutViewController *)aboutViewController
+{
+    if (nil == _aboutViewController) {
+        _aboutViewController = [[LAboutViewController alloc] init];
+        [window addSubview:_aboutViewController.view];
+    }
+    return _aboutViewController;
+}
+
+- (BottomControlView *)bottomView
+{
+    if (nil == _bottomView) {
+        _bottomView = [BottomControlView getInstance];
+        [_bottomView setParentView:window];
+        [window addSubview:_bottomView];
+    }
+    
+    return _bottomView;
+}
+#pragma mark -main methods to realize the app
+
+- (void)showDayView
+{
+    [self.dayViewController activate];
+    [window bringSubviewToFront:self.dayViewController.view];
+}
+
+- (void)showMonthView
+{
+    [self.monthViewController activate];
+    [window bringSubviewToFront:self.monthViewController.view];
+}
+
+- (void)showAboutView
+{
+    [self.aboutViewController activate];
+    [window bringSubviewToFront:self.aboutViewController.view];
+}
+
+#pragma mark -
+- (void)refreshBottomView
+{
+    
+}
+
+- (void)showBottomView
+{
+    [self.bottomView showView];
+}
+
+- (void)dismissBottomView
+{
+    [self.bottomView dismissView];
+}
+
+#pragma mark - default methods
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UIWindow *windowT = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    windowT.backgroundColor = [UIColor clearColor];
+    window = windowT;
+    
+    // Allow other classes to use us
+    _instance = self;
+    
+    //Override point for customization after app launch
+    [window makeKeyAndVisible];
+    
+    //
+    [self showMonthView];
     return YES;
 }
 							

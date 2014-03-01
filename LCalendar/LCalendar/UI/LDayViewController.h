@@ -10,4 +10,5 @@
 
 @interface LDayViewController : UIViewController
 
+- (void)activate;
 @end
