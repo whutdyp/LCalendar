@@ -21,6 +21,13 @@
 		550BA8F218BB508600B45475 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550BA8D418BB508600B45475 /* UIKit.framework */; };
 		550BA8FA18BB508600B45475 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550BA8F818BB508600B45475 /* InfoPlist.strings */; };
 		550BA8FC18BB508600B45475 /* LCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 550BA8FB18BB508600B45475 /* LCalendarTests.m */; };
+		551DB22B18C1F5580057E27C /* CTMarkUpParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 551DB22218C1F5580057E27C /* CTMarkUpParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		551DB22C18C1F5580057E27C /* FTCoreTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 551DB22418C1F5580057E27C /* FTCoreTextStyle.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		551DB22D18C1F5580057E27C /* FTCoreTextView+HAOWEN.m in Sources */ = {isa = PBXBuildFile; fileRef = 551DB22618C1F5580057E27C /* FTCoreTextView+HAOWEN.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		551DB22E18C1F5580057E27C /* FTCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 551DB22818C1F5580057E27C /* FTCoreTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		551DB22F18C1F5580057E27C /* UIImage+ScaleOrClip.m in Sources */ = {isa = PBXBuildFile; fileRef = 551DB22A18C1F5580057E27C /* UIImage+ScaleOrClip.m */; };
+		551DB23118C1F56E0057E27C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 551DB23018C1F56E0057E27C /* CoreText.framework */; };
+		551DB23318C1F9E30057E27C /* introduce.txt in Resources */ = {isa = PBXBuildFile; fileRef = 551DB23218C1F9E30057E27C /* introduce.txt */; };
 		553E44AD18BC2EB00070E833 /* BottomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44AC18BC2EB00070E833 /* BottomControlView.m */; };
 		553E44B518BC2EEC0070E833 /* Datetime.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44B018BC2EEC0070E833 /* Datetime.m */; };
 		553E44B618BC2EEC0070E833 /* JBCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 553E44B218BC2EEC0070E833 /* JBCalendar.m */; };
@@ -60,6 +67,18 @@
 		550BA8F718BB508600B45475 /* LCalendarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LCalendarTests-Info.plist"; sourceTree = "<group>"; };
 		550BA8F918BB508600B45475 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		550BA8FB18BB508600B45475 /* LCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCalendarTests.m; sourceTree = "<group>"; };
+		551DB22118C1F5580057E27C /* CTMarkUpParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTMarkUpParser.h; sourceTree = "<group>"; };
+		551DB22218C1F5580057E27C /* CTMarkUpParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTMarkUpParser.m; sourceTree = "<group>"; };
+		551DB22318C1F5580057E27C /* FTCoreTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoreTextStyle.h; sourceTree = "<group>"; };
+		551DB22418C1F5580057E27C /* FTCoreTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoreTextStyle.m; sourceTree = "<group>"; };
+		551DB22518C1F5580057E27C /* FTCoreTextView+HAOWEN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTCoreTextView+HAOWEN.h"; sourceTree = "<group>"; };
+		551DB22618C1F5580057E27C /* FTCoreTextView+HAOWEN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTCoreTextView+HAOWEN.m"; sourceTree = "<group>"; };
+		551DB22718C1F5580057E27C /* FTCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoreTextView.h; sourceTree = "<group>"; };
+		551DB22818C1F5580057E27C /* FTCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoreTextView.m; sourceTree = "<group>"; };
+		551DB22918C1F5580057E27C /* UIImage+ScaleOrClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ScaleOrClip.h"; sourceTree = "<group>"; };
+		551DB22A18C1F5580057E27C /* UIImage+ScaleOrClip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ScaleOrClip.m"; sourceTree = "<group>"; };
+		551DB23018C1F56E0057E27C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		551DB23218C1F9E30057E27C /* introduce.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = introduce.txt; sourceTree = "<group>"; };
 		553E44AB18BC2EB00070E833 /* BottomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomControlView.h; sourceTree = "<group>"; };
 		553E44AC18BC2EB00070E833 /* BottomControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomControlView.m; sourceTree = "<group>"; };
 		553E44AF18BC2EEC0070E833 /* Datetime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datetime.h; sourceTree = "<group>"; };
@@ -81,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551DB23118C1F56E0057E27C /* CoreText.framework in Frameworks */,
 				550BA8D318BB508600B45475 /* CoreGraphics.framework in Frameworks */,
 				550BA8D518BB508600B45475 /* UIKit.framework in Frameworks */,
 				550BA8D118BB508600B45475 /* Foundation.framework in Frameworks */,
@@ -122,6 +142,7 @@
 		550BA8CF18BB508600B45475 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				551DB23018C1F56E0057E27C /* CoreText.framework */,
 				550BA8D018BB508600B45475 /* Foundation.framework */,
 				550BA8D218BB508600B45475 /* CoreGraphics.framework */,
 				550BA8D418BB508600B45475 /* UIKit.framework */,
@@ -133,6 +154,7 @@
 		550BA8D618BB508600B45475 /* LCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				551DB22018C1F5580057E27C /* FTCoreText */,
 				553E44AE18BC2EEC0070E833 /* DataSource */,
 				553E44A918BC2EB00070E833 /* UI */,
 				550BA8DF18BB508600B45475 /* AppDelegate.h */,
@@ -149,6 +171,7 @@
 		550BA8D718BB508600B45475 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				551DB23218C1F9E30057E27C /* introduce.txt */,
 				550BA8D818BB508600B45475 /* LCalendar-Info.plist */,
 				550BA8D918BB508600B45475 /* InfoPlist.strings */,
 				550BA8DC18BB508600B45475 /* main.m */,
@@ -174,6 +197,23 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		551DB22018C1F5580057E27C /* FTCoreText */ = {
+			isa = PBXGroup;
+			children = (
+				551DB22118C1F5580057E27C /* CTMarkUpParser.h */,
+				551DB22218C1F5580057E27C /* CTMarkUpParser.m */,
+				551DB22318C1F5580057E27C /* FTCoreTextStyle.h */,
+				551DB22418C1F5580057E27C /* FTCoreTextStyle.m */,
+				551DB22518C1F5580057E27C /* FTCoreTextView+HAOWEN.h */,
+				551DB22618C1F5580057E27C /* FTCoreTextView+HAOWEN.m */,
+				551DB22718C1F5580057E27C /* FTCoreTextView.h */,
+				551DB22818C1F5580057E27C /* FTCoreTextView.m */,
+				551DB22918C1F5580057E27C /* UIImage+ScaleOrClip.h */,
+				551DB22A18C1F5580057E27C /* UIImage+ScaleOrClip.m */,
+			);
+			path = FTCoreText;
+			sourceTree = SOURCE_ROOT;
 		};
 		553E44A918BC2EB00070E833 /* UI */ = {
 			isa = PBXGroup;
@@ -287,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551DB23318C1F9E30057E27C /* introduce.txt in Resources */,
 				550BA8E918BB508600B45475 /* Images.xcassets in Resources */,
 				550BA8DB18BB508600B45475 /* InfoPlist.strings in Resources */,
 				550BA8E418BB508600B45475 /* Main.storyboard in Resources */,
@@ -309,14 +350,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				550BA8E718BB508600B45475 /* ViewController.m in Sources */,
+				551DB22C18C1F5580057E27C /* FTCoreTextStyle.m in Sources */,
 				553E44B618BC2EEC0070E833 /* JBCalendar.m in Sources */,
 				553E44BA18BC304B0070E833 /* LMonthViewController.m in Sources */,
 				553E44C018BC306D0070E833 /* LAboutViewController.m in Sources */,
 				553E44BD18BC305B0070E833 /* LDayViewController.m in Sources */,
 				553E44B718BC2EEC0070E833 /* LunarCalendar.m in Sources */,
 				553E44B518BC2EEC0070E833 /* Datetime.m in Sources */,
+				551DB22B18C1F5580057E27C /* CTMarkUpParser.m in Sources */,
+				551DB22D18C1F5580057E27C /* FTCoreTextView+HAOWEN.m in Sources */,
 				550BA8E118BB508600B45475 /* AppDelegate.m in Sources */,
 				550BA8DD18BB508600B45475 /* main.m in Sources */,
+				551DB22E18C1F5580057E27C /* FTCoreTextView.m in Sources */,
+				551DB22F18C1F5580057E27C /* UIImage+ScaleOrClip.m in Sources */,
 				553E44AD18BC2EB00070E833 /* BottomControlView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

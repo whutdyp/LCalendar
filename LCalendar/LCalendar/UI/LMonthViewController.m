@@ -137,9 +137,10 @@
     [Datetime GetLunarDayArrayByYear:strYear andMonth:strMonth];
     NSLog(@"%d年%d月%@日",strYear,strMonth,dayArray[t]);
     NSLog(@"%@",lunarDayArray[t]);
+    [[AppDelegate getInstance] showDayViewOfYear:strYear Month:strMonth Day:[dayArray[t] intValue]];
 }
 
-
+#pragma mark -
 //添加左右滑动手势
 -(void)AddHandleSwipe{
     //声明和初始化手势识别器
@@ -213,7 +214,7 @@
     [self AddDaybuttenToCalendarWatch];
 }
 
-
+#pragma mark -
 //识别其他手势，预留接口
 -(void)OtherTouchEvent{
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];

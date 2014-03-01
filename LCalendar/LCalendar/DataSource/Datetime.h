@@ -14,6 +14,10 @@
 + (LunarCalendar* )GetLunarCalendarByYear:(int)year
                                  andMonth:(int)month
                                    andDay:(int)day;
+//獲取某天的節氣,農曆,星期等信息   
++ (NSDictionary*)GetFestivalDayByYear:(int)year
+                         andMonth:(int)month
+                           andDay:(int)day;
 
 //所有年列表
 +(NSArray *)GetAllYearArray;
@@ -56,5 +60,13 @@
 +(NSString *)GetMinute;
 
 +(NSString *)GetSecond;
+
+/////////////////////////
++ (NSDictionary*)GetNextDateByYear:(int)year
+                          andMonth:(int)month
+                            andDay:(int)day;
++ (NSDictionary*)getPreviousDateByYear:(int)year
+                              andMonth:(int)month
+                                andDay:(int)day;
 
 @end

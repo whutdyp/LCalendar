@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LAboutViewController : UIViewController
-
+@property (nonatomic, retain) UIScrollView *scrollView;
 - (void)activate;
 @end

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BottomControlView.h"
+
 @class LDayViewController;
 @class LMonthViewController;
 @class LAboutViewController;
 @class BottomControlView;
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,BottomViewDelegate>
 {
     UIWindow *window;
     LDayViewController* _dayViewController;
@@ -31,5 +33,6 @@
 + (AppDelegate*)getInstance;
 
 - (void)showBottomView;
+- (void)showDayViewOfYear:(int)year Month:(int)month Day:(int)day;
 - (void)dismissBottomView;
 @end

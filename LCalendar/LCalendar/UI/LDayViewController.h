@@ -11,4 +11,5 @@
 @interface LDayViewController : UIViewController
 
 - (void)activate;
+- (void)resetYMDByYear:(int)year Month:(int)month Day:(int)day;
 @end

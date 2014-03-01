@@ -53,6 +53,7 @@ static BottomControlView* pBottomControlView = nil;
 @implementation BottomControlView
 @synthesize dayButton = _dayButton,monthButton = _monthButton, yearButton = _yearButton, aboutButton = _aboutButton;
 @synthesize parentView = _parentView;
+@synthesize delegate = _delegate;
 
 + (BottomControlView* )getInstance
 {
@@ -119,28 +120,41 @@ static BottomControlView* pBottomControlView = nil;
 - (void)dayButtonSelected
 {
     NSLog(@"day click");
-//    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:2 andDay:17]);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(changViewAtIndex:)]) {
+        [self.delegate changViewAtIndex:ViewTypeDay];
+    }
 }
 
 - (void)monthButtonSelected
 {
     NSLog(@"month click");
-//    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:2 andDay:14]);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(changViewAtIndex:)]) {
+        [self.delegate changViewAtIndex:ViewTypeMonth];
+    }
 }
 
 - (void)yearButtonSelected
 {
     NSLog(@"year click");
-//    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:2 andDay:4]);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(changViewAtIndex:)]) {
+        [self.delegate changViewAtIndex:ViewTypeYear];
+    }
 }
 
 - (void)aboutButtonSelected
 {
     NSLog(@"about click");
-//    NSLog(@"%@",[Datetime GetLunarDayByYear:2014 andMonth:1 andDay:5]);
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(changViewAtIndex:)]) {
+        [self.delegate changViewAtIndex:ViewTypeAbout];
+    }
 }
 
-#pragma mark - 
+#pragma mark -
+
 - (void)showView
 {
     if (self.hidden == YES) {
@@ -167,6 +181,21 @@ static BottomControlView* pBottomControlView = nil;
     [UIView commitAnimations];
 }
 
+- (void)dismissViewWithBloc:(void(^)(BOOL reload))block
+{
+    [UIView animateWithDuration:0.3
+                          delay:0.0
+                        options: UIViewAnimationCurveEaseOut
+                     animations:^{
+                         self.frame = CGRectMake(0, SYSTEM_HEIGHT, SYSTEM_WIDTH, VIEWBLACKHEIGHT);
+                         self.alpha = 0.6;
+                     }
+                     completion:^(BOOL finished){
+                         self.hidden = YES;
+                         block(NO);
+                     }];
+}
+
 - (void)dismissAction
 {
     self.hidden = YES;
@@ -188,7 +217,7 @@ static BottomControlView* pBottomControlView = nil;
     }
     [UIView setAnimationDuration:0.3];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-    [UIView setAnimationDelay:0.3];
+    [UIView setAnimationDelay:0.0];
     
     self.frame = CGRectMake(0, SYSTEM_HEIGHT - VIEWBLACKHEIGHT, SYSTEM_WIDTH, VIEWBLACKHEIGHT);
     self.alpha = 1.0;

@@ -168,6 +168,51 @@
     return [[date nsDate] chineseCalendarDate];
 }
 
++ (NSDictionary*)GetFestivalDayByYear:(int)year andMonth:(int)month andDay:(int)day
+{
+    LunarCalendar* lcanlendar = [Datetime GetLunarCalendarByYear:year andMonth:month andDay:day];
+    if (lcanlendar == nil) {
+        return nil;
+    }
+    NSString* wText = @"";
+    switch ([lcanlendar Weekday]) {
+        case 1:
+            wText = @"星期日";
+            break;
+        case 2:
+            wText = @"星期一";
+            break;
+        case 3:
+            wText = @"星期二";
+            break;
+        case 4:
+            wText = @"星期三";
+            break;
+        case 5:
+            wText = @"星期四";
+            break;
+        case 6:
+            wText = @"星期五";
+            break;
+        case 7:
+            wText = @"星期六";
+            break;
+        default:
+            break;
+    }
+    NSString* lText = [NSString stringWithFormat:@"%@%@",[lcanlendar MonthLunar],[lcanlendar DayLunar]];
+    
+    NSString* fText = [lcanlendar SolarTermTitle];
+    if (fText == nil && [fText length] <= 0) {
+       fText = [lcanlendar ChineseFestival];
+    }
+    if (fText == nil || fText.length <= 0) {
+        fText = [NSString stringWithFormat:@"%@%@年%@%@月%@%@日",[lcanlendar YearHeavenlyStem],[lcanlendar YearEarthlyBranch], [lcanlendar MonthHeavenlyStem], [lcanlendar MonthEarthlyBranch], [lcanlendar DayHeavenlyStem], [lcanlendar DayEarthlyBranch]];
+    }
+    NSDictionary* dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%@",fText],@"festival",wText, @"weekday",lText,@"lunar", nil];
+    return dict;
+}
+
 #pragma mark -Base Date Methods
 
 +(NSString *)GetYear
@@ -216,6 +261,41 @@
     [formatter setDateFormat:@"ss"];
     NSString* date = [[NSString alloc]initWithString:[formatter stringFromDate:[NSDate date]]];
     return date;
+}
+
+
+//////////////////
++ (NSDictionary*)GetNextDateByYear:(int)year andMonth:(int)month andDay:(int)day
+{
+    int count = [Datetime GetNumberOfDayByYera:year andByMonth:month];
+    if (day < count) {
+        day = day + 1;
+        return @{@"year": [NSNumber numberWithInt:year], @"month":[NSNumber numberWithInt:month],@"day":[NSNumber numberWithInt:day]};
+    }
+    day = 1;
+    month = month+1;
+    if(month == 13){
+        year++;
+        month = 1;
+    }
+    return @{@"year": [NSNumber numberWithInt:year], @"month":[NSNumber numberWithInt:month],@"day":[NSNumber numberWithInt:day]};
+}
+
++ (NSDictionary*)getPreviousDateByYear:(int)year andMonth:(int)month andDay:(int)day
+{
+    if (day > 1) {
+        day = day - 1;
+        return @{@"year": [NSNumber numberWithInt:year], @"month":[NSNumber numberWithInt:month],@"day":[NSNumber numberWithInt:day]};
+    }
+    
+    month = month -1;
+    if (month == 0) {
+        year --;
+        month = 12;
+    }
+    day = [Datetime GetNumberOfDayByYera:year andByMonth:month];
+
+    return @{@"year": [NSNumber numberWithInt:year], @"month":[NSNumber numberWithInt:month],@"day":[NSNumber numberWithInt:day]};
 }
 
 @end

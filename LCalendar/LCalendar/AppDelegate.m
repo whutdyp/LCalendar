@@ -58,6 +58,7 @@ static AppDelegate* _instance = nil;
     if (nil == _bottomView) {
         _bottomView = [BottomControlView getInstance];
         [_bottomView setParentView:window];
+        [_bottomView setDelegate:self];
         [window addSubview:_bottomView];
     }
     
@@ -67,8 +68,14 @@ static AppDelegate* _instance = nil;
 
 - (void)showDayView
 {
-    [self.dayViewController activate];
     [window bringSubviewToFront:self.dayViewController.view];
+    [self.dayViewController activate];
+}
+
+- (void)showDayViewOfYear:(int)year Month:(int)month Day:(int)day
+{
+    [self.dayViewController resetYMDByYear:year Month:month Day:day];
+    [self changViewAtIndex:ViewTypeDay];
 }
 
 - (void)showMonthView
@@ -99,6 +106,31 @@ static AppDelegate* _instance = nil;
     [self.bottomView dismissView];
 }
 
+- (void)changViewAtIndex:(NSInteger)index
+{
+    switch (index) {
+        case ViewTypeDay:
+        {
+            [self showDayView];
+        }break;
+        case ViewTypeMonth:
+        {
+            [self showMonthView];
+        }break;
+        case ViewTypeYear:
+        {
+            
+        }break;
+        case ViewTypeAbout:
+        {
+            [self showAboutView];
+        }break;
+        default:
+            break;
+    }
+    [window bringSubviewToFront:_bottomView];
+}
+
 #pragma mark - default methods
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -114,7 +146,7 @@ static AppDelegate* _instance = nil;
     [window makeKeyAndVisible];
     
     //
-    [self showMonthView];
+    [self showDayView];
     return YES;
 }
 							
