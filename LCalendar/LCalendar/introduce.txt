@@ -1,0 +1,19 @@
+<bold>简介</bold>
+
+农历是DP团队用心打造的一款精简的农历应用
+
+<bold>信息</bold>
+
+开发商     D-P-Soft(Shenzhen)Co.,Ltd.
+类   别     工具
+更   新     2013年12月12日
+版   本     3.0.2
+大   小     10.3MB
+兼容性     需要iOS6.0或更高版本
+语   言     简体中文，繁體中文，英文
+
+
+欢迎关注我们的博客：<_link>http://www.cnblogs.com/IlvDanping1024/|CoCrash</_link>
+
+
+<_link>http://www.cnblogs.com/IlvDanping1024/|©2013 D-P-Soft</_link>
